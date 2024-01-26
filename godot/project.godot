@@ -10,7 +10,9 @@ config_version=5
 
 [application]
 
-config/name="MyGame"
+config/name="Endorphin"
+config/description="A game about laughing (and the lack thereof)"
+config/version="1.0.0"
 run/main_scene="res://scenes/boot/godot/godot_bootsplash_scene.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.svg"
@@ -21,12 +23,23 @@ UserSettings="*res://settings/user_settings.gd"
 
 [display]
 
-window/size/viewport_width=576
-window/size/viewport_height=324
+window/size/viewport_width=384
+window/size/viewport_height=216
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
+window/vsync/vsync_mode=2
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://world/": "purple"
+}
 
 [gui]
 
@@ -91,6 +104,18 @@ pause={
 
 locale/translations=PackedStringArray("res://i18n/translation.de.translation", "res://i18n/translation.en.translation")
 
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_navigation/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="endophin"
+2d_physics/layer_4="anxiety"
+2d_physics/layer_5="anger"
+2d_physics/layer_6="disgust"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)

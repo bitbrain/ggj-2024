@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw07wggysmcmm"]
+
+[ext_resource type="Texture2D" uid="uid://w4wn3u153fmx" path="res://world/map/map.png" id="1_se848"]
+
+[node name="Map" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-521, -505)
+texture = ExtResource("1_se848")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D1" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-359, 55, -346, -17, -234, -39, -178, -70, -79, -29, -258, 228)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-196, 290, -17, -1, 90, 55, 115, 205, 190, 354, 19, 416, -123, 380)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-153, -126, -36, -83, 10, -173, 28, -360, -211, -327, -199, -243, -149, -180)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(89, -353, 205, -315, 290, -143, 238, -36, 129, 6, 19, -54, 80, -201)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
