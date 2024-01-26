@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var ACCELERATION = 1150
+@export var ACCELERATION = 1550
 @export var CHARGING_ACCELERATION = ACCELERATION * 2
-@export var FRICTION = 470
+@export var FRICTION = 770
 @export var MAX_SPEED = 275
 
 

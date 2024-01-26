@@ -23,8 +23,8 @@ UserSettings="*res://settings/user_settings.gd"
 
 [display]
 
-window/size/viewport_width=384
-window/size/viewport_height=216
+window/size/viewport_width=576
+window/size/viewport_height=324
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
