@@ -1,8 +1,0 @@
-res://world/map/map.tscn
-res://ui/theme.tres
-res://scenes/ingame_scene.tscn
-res://scenes/boot/godot/godot_bootsplash_scene.tscn
-res://input/player_controller.tscn
-res://input/player_controller.gd
-res://world/player/player.tscn
-res://world/player/player.gd

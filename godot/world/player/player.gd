@@ -14,5 +14,8 @@ func move(input_vector:Vector2) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+	if input_vector != Vector2.ZERO:
+		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	move_and_slide()

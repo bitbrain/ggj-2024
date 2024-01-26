@@ -1,12 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://dw07wggysmcmm"]
 
-[ext_resource type="Texture2D" uid="uid://w4wn3u153fmx" path="res://world/map/map.png" id="1_se848"]
+[ext_resource type="Texture2D" uid="uid://dlpd48kv8l5er" path="res://world/map/map.png" id="1_ab1e5"]
 
 [node name="Map" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-521, -505)
-texture = ExtResource("1_se848")
+texture = ExtResource("1_ab1e5")
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
