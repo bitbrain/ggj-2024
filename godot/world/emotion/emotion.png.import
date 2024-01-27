@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jw44ngteneg5"
-path="res://.godot/imported/endorphin.png-cf300db16d93e51c46cac289e2ad1bb0.ctex"
+uid="uid://dfvul4d81aino"
+path="res://.godot/imported/emotion.png-44a1e48dd669170d1af3765b108ac760.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/endorphin/endorphin.png"
-dest_files=["res://.godot/imported/endorphin.png-cf300db16d93e51c46cac289e2ad1bb0.ctex"]
+source_file="res://world/emotion/emotion.png"
+dest_files=["res://.godot/imported/emotion.png-44a1e48dd669170d1af3765b108ac760.ctex"]
 
 [params]
 

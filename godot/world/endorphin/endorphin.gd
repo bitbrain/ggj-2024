@@ -1,1 +1,0 @@
-class_name Endorphin extends CharacterBody2D

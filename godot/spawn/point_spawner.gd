@@ -1,8 +1,8 @@
 extends Node2D
 
 
-@export var spawn_scene:PackedScene
-
+const EmotionScene = preload("res://world/emotion/emotion.tscn")
+const Emotions = [Emotion.EmotionType.HAPPINESS, Emotion.EmotionType.SADNESS]
 
 @onready var timer: Timer = $Timer
 
@@ -20,7 +20,8 @@ func _ready() -> void:
 
 func spawn() -> void:
 	var random_position = markers.pick_random().global_position
-	var spawn_instance = spawn_scene.instantiate()
+	var spawn_instance = EmotionScene.instantiate() as Emotion
+	spawn_instance.emotion_type = Emotions.pick_random()
 	spawn_instance.global_position = random_position
 	add_child(spawn_instance)
 	

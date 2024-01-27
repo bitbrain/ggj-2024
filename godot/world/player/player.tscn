@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ci7db348lrw7a" path="res://lighting/light.png" id="4_sdaku"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0fxl0"]
-radius = 22.0227
+radius = 25.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqfsr"]
 atlas = ExtResource("2_g3p1i")
@@ -124,7 +124,7 @@ shape = SubResource("CircleShape2D_0fxl0")
 sprite_frames = SubResource("SpriteFrames_bmcmq")
 animation = &"neutral"
 autoplay = "neutral"
-frame_progress = 0.162694
+frame_progress = 0.92405
 
 [node name="Collectors" type="Node2D" parent="."]
 
@@ -152,12 +152,13 @@ position = Vector2(17, -1)
 [node name="Collector8" parent="Collectors" instance=ExtResource("3_7qjwl")]
 position = Vector2(12, -12)
 
-[node name="EndorphinDetector" type="Area2D" parent="."]
+[node name="EmotionDetector" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndorphinDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EmotionDetector"]
 shape = SubResource("CircleShape2D_0llwj")
 
 [node name="HappinessLight" type="PointLight2D" parent="."]
+energy = 0.5
 texture = ExtResource("4_sdaku")

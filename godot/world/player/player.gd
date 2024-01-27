@@ -7,18 +7,13 @@ extends CharacterBody2D
 
 
 @onready var player_sprite: AnimatedSprite2D = $PlayerSprite
-@onready var endorphin_detector: Area2D = $EndorphinDetector
+@onready var emotion_detector: Area2D = $EmotionDetector
 @onready var collectors: Array[Node] = $Collectors.get_children()
 
 
 var input_vector = Vector2.ZERO
-var endorphins := 0:
-	set(e):
-		endorphins = e
-		if collectors != null:
-			for index in range(0, collectors.size()):
-				var collector = collectors[index] as Collector
-				collector.charged = index < endorphins
+var emotions:Array[int]= []
+			
 var happiness := 0:
 	set(h):
 		happiness = h
@@ -32,17 +27,28 @@ var happiness := 0:
 
 func _ready() -> void:
 	self.happiness = 0
-	endorphin_detector.body_entered.connect(_on_endorphin_collected)
+	emotion_detector.body_entered.connect(_on_emotion_collected)
 
 
-func _on_endorphin_collected(endorphin:Endorphin) -> void:
-	endorphins += 1
+func _on_emotion_collected(emotion:Emotion) -> void:
+	emotions.append(emotion.emotion_type)
+
 	# TODO: animate absorbtion process
-	endorphin.queue_free()
+	emotion.queue_free()
 	
-	if endorphins == collectors.size():
-		endorphins = 0
+	if emotions.size() == collectors.size():
+		emotions.clear()
+		for index in range(0, collectors.size()):
+			var collector = collectors[index] as Collector
+			collector.clear()
+		# TODO: figure out way to drive
+		# emotions.
 		happiness += 1
+	else:
+		for index in range(0, emotions.size()):
+			var collector = collectors[index] as Collector
+			collector.emotion = emotions[index]
+
 
 func move(input_vector:Vector2) -> void:
 	self.input_vector = input_vector.normalized()

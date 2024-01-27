@@ -1,15 +1,22 @@
 class_name Collector extends Node2D
 
 ## Toggle this property to charge up this collector.
-@export var charged:bool = false:
-	set(c):
-		charged = c
+@export var emotion:Emotion.EmotionType:
+	set(e):
+		emotion = e
 		if charge != null:
-			charge.visible = charged
+			charge.visible = true
+			if emotion == Emotion.EmotionType.HAPPINESS:
+				charge.animation = "happiness"
+			if emotion == Emotion.EmotionType.SADNESS:
+				charge.animation = "sadness"
 
-@onready var charge: Sprite2D = $Charge
+@onready var charge: AnimatedSprite2D = $Charge
 
 
-func _ready() -> void:
-	charge.visible = charged
+func clear() -> void:
+	charge.visible = false
+	
 
+func is_charged() -> bool:
+	return charge.visible == true
