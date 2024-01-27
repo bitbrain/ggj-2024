@@ -7,7 +7,7 @@ const COLOR_SADNESS = Color("b6f7fc")
 
 enum EmotionType {
 	HAPPINESS = 1,
-	SADNESS = -1
+	SADNESS = -2
 }
 
 @export var emotion_type:EmotionType = EmotionType.HAPPINESS:

@@ -21,6 +21,8 @@ func _ready() -> void:
 
 
 func _on_receptor_touched(receptor:Receptor) -> void:
+	if emotions.is_empty():
+		return
 	receptor.deliver(emotions.duplicate())
 	emotions.clear()
 	for index in range(0, collectors.size()):
