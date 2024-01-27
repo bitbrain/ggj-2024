@@ -10,7 +10,7 @@ enum EmotionType {
 	SADNESS = -2
 }
 
-@export var movement_speed := 50.0
+@export var movement_speed := 120.0
 @export var emotion_type:EmotionType = EmotionType.HAPPINESS:
 	set(et):
 		emotion_type = et
@@ -21,7 +21,7 @@ enum EmotionType {
 			if emotion_type == EmotionType.SADNESS:
 				emotion_sprite.animation = "sadness"
 				point_light_2d.color = COLOR_SADNESS
-		
+
 
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var emotion_sprite: AnimatedSprite2D = $EmotionSprite
@@ -46,7 +46,11 @@ func _ready() -> void:
 	
 	
 func _update_navigation() -> void:
-	set_target_position(player.global_position)
+	if emotion_type == EmotionType.SADNESS:
+		set_target_position(player.global_position)
+	if emotion_type == EmotionType.HAPPINESS:
+		# TODO: avoid player?
+		pass
 
 
 func set_target_position(target_position:Vector2) -> void:

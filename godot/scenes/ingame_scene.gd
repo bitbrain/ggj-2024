@@ -3,6 +3,7 @@ extends Node2D
 @onready var fade_overlay = %FadeOverlay
 @onready var pause_overlay = %PauseOverlay
 @onready var receptors: Array[Node] = $Receptors.get_children()
+@onready var spawner: PointSpawner = $Emotions
 
 
 var emotional_state := 0
@@ -33,5 +34,5 @@ func _save_game() -> void:
 func _on_emotions_received(emotions:Array[int]) -> void:
 	for emotion in emotions:
 		emotional_state += emotion
-		
-	print("New emotionl state: " + str(emotional_state))
+	spawner.start_spawning()
+	print("New emotional state: " + str(emotional_state))
