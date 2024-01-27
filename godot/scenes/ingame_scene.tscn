@@ -13,57 +13,62 @@
 script = ExtResource("1_objyc")
 
 [node name="PlayerController" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_ekgim")]
-player = NodePath("../Player")
+player = NodePath("../Entities/Player")
 
 [node name="Map" parent="." instance=ExtResource("2_8eyxl")]
 
-[node name="Receptors" type="Node2D" parent="."]
+[node name="Entities" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="Receptor" parent="Receptors" instance=ExtResource("4_x8auc")]
+[node name="Receptors" type="Node2D" parent="Entities"]
+unique_name_in_owner = true
+
+[node name="Receptor" parent="Entities/Receptors" instance=ExtResource("4_x8auc")]
 position = Vector2(-510, 96)
 
-[node name="Receptor2" parent="Receptors" instance=ExtResource("4_x8auc")]
+[node name="Receptor2" parent="Entities/Receptors" instance=ExtResource("4_x8auc")]
 position = Vector2(401, -577)
 
-[node name="Emotions" parent="." instance=ExtResource("4_21hy4")]
+[node name="Emotions" parent="Entities" instance=ExtResource("4_21hy4")]
+unique_name_in_owner = true
 
-[node name="SpawnPosition1" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition1" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(-694, -689)
 
-[node name="SpawnPosition2" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition2" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(-227, -389)
 
-[node name="SpawnPosition3" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition3" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(-556, 187)
 
-[node name="SpawnPosition4" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition4" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(430, 19)
 
-[node name="SpawnPosition5" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition5" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(302, -596)
 
-[node name="SpawnPosition6" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition6" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(-317, 401)
 
-[node name="SpawnPosition7" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition7" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(-602, 497)
 
-[node name="SpawnPosition8" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition8" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(462, 416)
 
-[node name="SpawnPosition9" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition9" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(-392, 820)
 
-[node name="SpawnPosition10" type="Marker2D" parent="Emotions"]
+[node name="SpawnPosition10" type="Marker2D" parent="Entities/Emotions"]
 position = Vector2(72, 761)
 
-[node name="Player" parent="." instance=ExtResource("2_rkgs6")]
+[node name="Player" parent="Entities" instance=ExtResource("2_rkgs6")]
 position = Vector2(-377, 59)
 collision_layer = 2
 CHARGING_ACCELERATION = 3100
 MAX_SPEED = 350
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Entities/Player"]
 limit_left = -1024
 limit_top = -1024
 limit_right = 1024

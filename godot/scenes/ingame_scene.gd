@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var fade_overlay = %FadeOverlay
 @onready var pause_overlay = %PauseOverlay
-@onready var receptors: Array[Node] = $Receptors.get_children()
-@onready var spawner: PointSpawner = $Emotions
+@onready var receptors: Array[Node] = %Receptors.get_children()
+@onready var spawner: PointSpawner = %Emotions
 
 
 var emotional_state := 0

@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+
+const WorldCursor = preload("res://world/cursor/world_cursor.tscn")
+
+
 @export var ACCELERATION = 1550
 @export var CHARGING_ACCELERATION = ACCELERATION * 2
 @export var FRICTION = 770
@@ -33,6 +37,9 @@ func _unhandled_input(event):
 
 func set_target_position(target_position:Vector2) -> void:
 	navigation_agent_2d.target_position = target_position
+	var cursor = WorldCursor.instantiate()
+	cursor.global_position = target_position
+	get_parent().add_child(cursor)
 
 
 func _on_receptor_touched(receptor:Receptor) -> void:
