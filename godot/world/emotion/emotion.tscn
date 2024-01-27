@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://world/emotion/emotion.gd" id="1_mwv1y"]
 [ext_resource type="Texture2D" uid="uid://dfvul4d81aino" path="res://world/emotion/emotion.png" id="2_cksn4"]
-[ext_resource type="Texture2D" uid="uid://ci7db348lrw7a" path="res://lighting/light.png" id="3_d6c6n"]
+[ext_resource type="PackedScene" uid="uid://b2k4pl8njae8l" path="res://lighting/animated_light.tscn" id="3_3sx3e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jqlhy"]
 radius = 8.0
@@ -37,7 +37,6 @@ animations = [{
 [node name="Emotion" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_mwv1y")
-movement_speed = null
 emotion_type = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -48,13 +47,15 @@ sprite_frames = SubResource("SpriteFrames_6qkj0")
 animation = &"happiness"
 autoplay = "happiness"
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0.713726, 0.968627, 0.988235, 1)
-energy = 0.3
-texture = ExtResource("3_d6c6n")
-texture_scale = 0.5
+[node name="PointLight2D" parent="." instance=ExtResource("3_3sx3e")]
+position = Vector2(3.15212, 4.21888)
+energy = 0.5
+texture_scale = 0.3
+animation_strength = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 8.0
+target_desired_distance = 8.0
 debug_enabled = true
 
 [node name="NavigationUpdateTimer" type="Timer" parent="."]

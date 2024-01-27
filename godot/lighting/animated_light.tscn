@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2k4pl8njae8l"]
+
+[ext_resource type="Script" path="res://lighting/animated_light.gd" id="1_15iyp"]
+[ext_resource type="Texture2D" uid="uid://ci7db348lrw7a" path="res://lighting/light.png" id="1_rlnc6"]
+
+[node name="AnimatedLight" type="PointLight2D"]
+position = Vector2(-8.9545, -13.2596)
+texture = ExtResource("1_rlnc6")
+script = ExtResource("1_15iyp")

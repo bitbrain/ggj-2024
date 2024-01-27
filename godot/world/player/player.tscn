@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/player/player.gd" id="1_qotba"]
 [ext_resource type="Texture2D" uid="uid://fbw5qfdyiogs" path="res://world/player/player.png" id="2_g3p1i"]
 [ext_resource type="PackedScene" uid="uid://8hiugi0xab50" path="res://world/player/collector/collector.tscn" id="3_7qjwl"]
-[ext_resource type="Texture2D" uid="uid://ci7db348lrw7a" path="res://lighting/light.png" id="4_sdaku"]
+[ext_resource type="PackedScene" uid="uid://b2k4pl8njae8l" path="res://lighting/animated_light.tscn" id="4_uubsh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0fxl0"]
 radius = 25.0
@@ -79,6 +79,7 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReceptorDetector"]
 shape = SubResource("CircleShape2D_ytl16")
 
-[node name="HappinessLight" type="PointLight2D" parent="."]
+[node name="AnimatedLight" parent="." instance=ExtResource("4_uubsh")]
+position = Vector2(7.25407, -14.181)
 energy = 0.5
-texture = ExtResource("4_sdaku")
+animation_strength = 3
