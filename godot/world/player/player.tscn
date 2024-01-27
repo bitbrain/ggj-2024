@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8hm6ewgugop6"]
+[gd_scene load_steps=10 format=3 uid="uid://8hm6ewgugop6"]
 
 [ext_resource type="Script" path="res://world/player/player.gd" id="1_qotba"]
 [ext_resource type="Texture2D" uid="uid://fbw5qfdyiogs" path="res://world/player/player.png" id="2_g3p1i"]
@@ -25,6 +25,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0llwj"]
 radius = 47.2652
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ytl16"]
+radius = 30.0167
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -68,6 +71,13 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EmotionDetector"]
 shape = SubResource("CircleShape2D_0llwj")
+
+[node name="ReceptorDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReceptorDetector"]
+shape = SubResource("CircleShape2D_ytl16")
 
 [node name="HappinessLight" type="PointLight2D" parent="."]
 energy = 0.5

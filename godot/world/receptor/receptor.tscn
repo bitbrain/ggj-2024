@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch1m0tekwfovr"]
+
+[ext_resource type="Script" path="res://world/receptor/receptor.gd" id="1_dsvpu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5oo75"]
+radius = 42.0476
+
+[node name="Receptor" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_dsvpu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5oo75")

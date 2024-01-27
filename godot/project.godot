@@ -111,7 +111,8 @@ locale/translations=PackedStringArray("res://i18n/translation.de.translation", "
 2d_physics/layer_1="world"
 2d_navigation/layer_1="world"
 2d_physics/layer_2="player"
-2d_physics/layer_3="endorphin"
+2d_physics/layer_3="emotion"
+2d_physics/layer_4="receptor"
 
 [rendering]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=9 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://8hm6ewgugop6" path="res://world/player/player.tscn" id="2_rkgs6"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
 [ext_resource type="PackedScene" uid="uid://dvf5nvg4jdneq" path="res://spawn/point_spawner.tscn" id="4_21hy4"]
+[ext_resource type="PackedScene" uid="uid://ch1m0tekwfovr" path="res://world/receptor/receptor.tscn" id="4_x8auc"]
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_objyc")
@@ -16,41 +17,47 @@ player = NodePath("../Player")
 
 [node name="Map" parent="." instance=ExtResource("2_8eyxl")]
 
-[node name="Endophins" parent="." instance=ExtResource("4_21hy4")]
+[node name="Receptors" type="Node2D" parent="."]
 
-[node name="SpawnPosition1" type="Marker2D" parent="Endophins"]
+[node name="Receptor" parent="Receptors" instance=ExtResource("4_x8auc")]
+position = Vector2(-510, 96)
+
+[node name="Emotions" parent="." instance=ExtResource("4_21hy4")]
+
+[node name="SpawnPosition1" type="Marker2D" parent="Emotions"]
 position = Vector2(-694, -689)
 
-[node name="SpawnPosition2" type="Marker2D" parent="Endophins"]
+[node name="SpawnPosition2" type="Marker2D" parent="Emotions"]
 position = Vector2(-227, -389)
 
-[node name="SpawnPosition3" type="Marker2D" parent="Endophins"]
+[node name="SpawnPosition3" type="Marker2D" parent="Emotions"]
 position = Vector2(-556, 187)
 
-[node name="SpawnPosition4" type="Marker2D" parent="Endophins"]
+[node name="SpawnPosition4" type="Marker2D" parent="Emotions"]
 position = Vector2(430, 19)
 
-[node name="SpawnPosition5" type="Marker2D" parent="Endophins"]
+[node name="SpawnPosition5" type="Marker2D" parent="Emotions"]
 position = Vector2(302, -596)
 
-[node name="SpawnPosition6" type="Marker2D" parent="Endophins"]
+[node name="SpawnPosition6" type="Marker2D" parent="Emotions"]
 position = Vector2(-317, 401)
 
-[node name="SpawnPosition7" type="Marker2D" parent="Endophins"]
+[node name="SpawnPosition7" type="Marker2D" parent="Emotions"]
 position = Vector2(-602, 497)
 
-[node name="SpawnPosition8" type="Marker2D" parent="Endophins"]
+[node name="SpawnPosition8" type="Marker2D" parent="Emotions"]
 position = Vector2(462, 416)
 
-[node name="SpawnPosition9" type="Marker2D" parent="Endophins"]
+[node name="SpawnPosition9" type="Marker2D" parent="Emotions"]
 position = Vector2(-392, 820)
 
-[node name="SpawnPosition10" type="Marker2D" parent="Endophins"]
+[node name="SpawnPosition10" type="Marker2D" parent="Emotions"]
 position = Vector2(72, 761)
 
 [node name="Player" parent="." instance=ExtResource("2_rkgs6")]
-position = Vector2(-457, 94)
+position = Vector2(-377, 59)
 collision_layer = 2
+CHARGING_ACCELERATION = 3100
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = -1024
@@ -61,7 +68,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.862745, 0.686275, 0.67451, 1)
+color = Color(0.603922, 0.603922, 0.603922, 1)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

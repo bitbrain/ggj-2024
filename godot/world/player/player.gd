@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 @onready var player_sprite: AnimatedSprite2D = $PlayerSprite
 @onready var emotion_detector: Area2D = $EmotionDetector
+@onready var receptor_detector: Area2D = $ReceptorDetector
 @onready var collectors: Array[Node] = $Collectors.get_children()
 
 
@@ -16,6 +17,15 @@ var emotions:Array[int]= []
 
 func _ready() -> void:
 	emotion_detector.body_entered.connect(_on_emotion_collected)
+	receptor_detector.body_entered.connect(_on_receptor_touched)
+
+
+func _on_receptor_touched(receptor:Receptor) -> void:
+	receptor.deliver(emotions.duplicate())
+	emotions.clear()
+	for index in range(0, collectors.size()):
+		var collector = collectors[index] as Collector
+		collector.clear()
 
 
 func _on_emotion_collected(emotion:Emotion) -> void:
@@ -25,13 +35,7 @@ func _on_emotion_collected(emotion:Emotion) -> void:
 		for index in range(0, emotions.size()):
 			var collector = collectors[index] as Collector
 			collector.emotion = emotions[index]
-
-
-func deliver() -> void:
-	emotions.clear()
-	for index in range(0, collectors.size()):
-		var collector = collectors[index] as Collector
-		collector.clear()
+	
 
 func move(input_vector:Vector2) -> void:
 	self.input_vector = input_vector.normalized()
