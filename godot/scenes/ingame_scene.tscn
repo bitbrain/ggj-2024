@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://p22jlf0mu6ao" path="res://input/player_controller.tscn" id="2_ekgim"]
 [ext_resource type="PackedScene" uid="uid://8hm6ewgugop6" path="res://world/player/player.tscn" id="2_rkgs6"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
-[ext_resource type="PackedScene" uid="uid://bdj7cmfhvtj32" path="res://world/endophin/endophin.tscn" id="4_b25wk"]
+[ext_resource type="PackedScene" uid="uid://dvf5nvg4jdneq" path="res://spawn/point_spawner.tscn" id="4_21hy4"]
 [ext_resource type="Texture2D" uid="uid://ci7db348lrw7a" path="res://lighting/light.png" id="5_6pt8f"]
 
 [node name="IngameScene" type="Node2D"]
@@ -17,19 +17,23 @@ player = NodePath("../Player")
 
 [node name="Map" parent="." instance=ExtResource("2_8eyxl")]
 
-[node name="Endophins" type="Node2D" parent="."]
+[node name="Endophins" parent="." instance=ExtResource("4_21hy4")]
 
-[node name="Endophin" parent="Endophins" instance=ExtResource("4_b25wk")]
-position = Vector2(-683, 323)
+[node name="SpawnPosition1" type="Marker2D" parent="Endophins"]
+position = Vector2(-694, -689)
 
-[node name="Endophin2" parent="Endophins" instance=ExtResource("4_b25wk")]
-position = Vector2(-642, -650)
+[node name="SpawnPosition2" type="Marker2D" parent="Endophins"]
+position = Vector2(-702, -555)
 
-[node name="Endophin3" parent="Endophins" instance=ExtResource("4_b25wk")]
-position = Vector2(-445, 845)
+[node name="SpawnPosition3" type="Marker2D" parent="Endophins"]
+position = Vector2(-517, -645)
+
+[node name="SpawnPosition4" type="Marker2D" parent="Endophins"]
+position = Vector2(-485, -439)
 
 [node name="Player" parent="." instance=ExtResource("2_rkgs6")]
-position = Vector2(49, 61)
+position = Vector2(-539, -595)
+collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = -1024
@@ -43,7 +47,7 @@ position_smoothing_enabled = true
 color = Color(0.501961, 0.807843, 0.894118, 1)
 shadow_color = Color(0.831373, 0, 0.447059, 0)
 shadow_filter = 1
-shadow_filter_smooth = 6.6
+shadow_filter_smooth = 15.7
 texture = ExtResource("5_6pt8f")
 texture_scale = 1.2
 
