@@ -1,0 +1,45 @@
+# win/lose condition:
+
+- when happiness score above X: win
+- when happiness score below Y: lose
+- add sound + visual indicators for current happiness score
+
+# nice to have gameplay
+
+- happy emotions try to escape the player; alternatively, they go distinct routes and the player needs to find them
+- dash mechanic to destroy emotions (can also destroy happy emotions)
+- negative emotions do not chase you straight away, but only when getting to close
+- avoid having a horde of blue emotions chasing the player when they cannot carry more. Ideas: let them damage you + permadeath?
+
+
+# polishing
+
+- redo + animate player sprite
+- redo + animate emotion
+- animate absorbing emotions
+- animate delivery of emotions
+- finish map art
+- style UI
+- compose music for:
+   - title screen
+   - sadness score
+   - happy score
+   - medium score
+- sound effects for:
+   - move player
+   - collect emotion
+   - full of emotions
+   - deliver emotion
+   - emotion ambience (happy, sad)
+   - world ambience (creepy drone)
+   - emotion spawn (close by only)
+- branding
+   - animated logo
+   - buttons
+   - translations
+   - write up itch.io page
+- display controls somewhere
+
+# balancing
+
+- expire spawned emotions after X seconds to avoid cluttering of negative emotions
