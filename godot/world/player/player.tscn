@@ -83,3 +83,5 @@ shape = SubResource("CircleShape2D_ytl16")
 position = Vector2(7.25407, -14.181)
 energy = 0.5
 animation_strength = 3
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

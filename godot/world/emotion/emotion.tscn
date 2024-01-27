@@ -56,7 +56,6 @@ animation_strength = 1
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 8.0
 target_desired_distance = 8.0
-debug_enabled = true
 
 [node name="NavigationUpdateTimer" type="Timer" parent="."]
 wait_time = 0.25

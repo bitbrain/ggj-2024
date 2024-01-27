@@ -42,7 +42,7 @@ func _ready() -> void:
 	self.emotion_type = emotion_type
 	navigation_agent_2d.path_desired_distance = 8.0
 	navigation_agent_2d.target_desired_distance = 8.0
-	navigation_agent_2d.debug_enabled = true
+	navigation_agent_2d.debug_enabled = false
 	
 	
 func _update_navigation() -> void:
