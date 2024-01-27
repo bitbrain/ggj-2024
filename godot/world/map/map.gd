@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var collision_polygons = $Collisions.get_children()
+@onready var collision_polygons = $NavigationRegion2D/Collisions.get_children()
 @onready var shadows = $Shadows
 
 
@@ -16,3 +16,4 @@ func _generate_occluders() -> void:
 		occlusion_polygon.polygon = collision.polygon
 		light_2d_occluder.occluder = occlusion_polygon
 		shadows.add_child(light_2d_occluder)
+		

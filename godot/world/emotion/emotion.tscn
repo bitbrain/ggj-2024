@@ -37,6 +37,7 @@ animations = [{
 [node name="Emotion" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_mwv1y")
+movement_speed = null
 emotion_type = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -52,3 +53,6 @@ color = Color(0.713726, 0.968627, 0.988235, 1)
 energy = 0.3
 texture = ExtResource("3_d6c6n")
 texture_scale = 0.5
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
