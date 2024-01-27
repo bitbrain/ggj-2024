@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=8 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://8hm6ewgugop6" path="res://world/player/player.tscn" id="2_rkgs6"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
 [ext_resource type="PackedScene" uid="uid://dvf5nvg4jdneq" path="res://spawn/point_spawner.tscn" id="4_21hy4"]
-[ext_resource type="Texture2D" uid="uid://ci7db348lrw7a" path="res://lighting/light.png" id="5_6pt8f"]
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_objyc")
@@ -60,14 +59,6 @@ limit_right = 1024
 limit_bottom = 1024
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="PointLight2D" type="PointLight2D" parent="Player"]
-color = Color(0.501961, 0.807843, 0.894118, 1)
-shadow_color = Color(0.831373, 0, 0.447059, 0)
-shadow_filter = 1
-shadow_filter_smooth = 15.7
-texture = ExtResource("5_6pt8f")
-texture_scale = 1.2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.25098, 0.168627, 0.133333, 1)
