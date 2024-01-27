@@ -23,13 +23,31 @@ player = NodePath("../Player")
 position = Vector2(-694, -689)
 
 [node name="SpawnPosition2" type="Marker2D" parent="Endophins"]
-position = Vector2(-702, -555)
+position = Vector2(-227, -389)
 
 [node name="SpawnPosition3" type="Marker2D" parent="Endophins"]
-position = Vector2(-517, -645)
+position = Vector2(-556, 187)
 
 [node name="SpawnPosition4" type="Marker2D" parent="Endophins"]
-position = Vector2(-485, -439)
+position = Vector2(430, 19)
+
+[node name="SpawnPosition5" type="Marker2D" parent="Endophins"]
+position = Vector2(302, -596)
+
+[node name="SpawnPosition6" type="Marker2D" parent="Endophins"]
+position = Vector2(-317, 401)
+
+[node name="SpawnPosition7" type="Marker2D" parent="Endophins"]
+position = Vector2(-602, 497)
+
+[node name="SpawnPosition8" type="Marker2D" parent="Endophins"]
+position = Vector2(462, 416)
+
+[node name="SpawnPosition9" type="Marker2D" parent="Endophins"]
+position = Vector2(-392, 820)
+
+[node name="SpawnPosition10" type="Marker2D" parent="Endophins"]
+position = Vector2(72, 761)
 
 [node name="Player" parent="." instance=ExtResource("2_rkgs6")]
 position = Vector2(-539, -595)

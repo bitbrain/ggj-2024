@@ -7,15 +7,17 @@ extends CharacterBody2D
 
 
 @onready var endorphin_detector: Area2D = $EndorphinDetector
-@onready var endorphin_counter: Label = $EndorphinCounter
+@onready var collectors: Array[Node] = $Collectors.get_children()
 
 
 var input_vector = Vector2.ZERO
 var endorphins := 0:
 	set(e):
 		endorphins = e
-		if endorphin_counter != null:
-			endorphin_counter.text = str(endorphins)
+		if collectors != null:
+			for index in range(0, collectors.size()):
+				var collector = collectors[index] as Collector
+				collector.charged = index <= endorphins
 
 
 func _ready() -> void:
