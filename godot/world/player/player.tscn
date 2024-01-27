@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://8hm6ewgugop6"]
+[gd_scene load_steps=9 format=3 uid="uid://8hm6ewgugop6"]
 
 [ext_resource type="Script" path="res://world/player/player.gd" id="1_qotba"]
 [ext_resource type="Texture2D" uid="uid://fbw5qfdyiogs" path="res://world/player/player.png" id="2_g3p1i"]
@@ -8,105 +8,18 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0fxl0"]
 radius = 25.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vqfsr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3moa8"]
 atlas = ExtResource("2_g3p1i")
 region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4lubx"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3m0pu"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngrld"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cjd1q"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(0, 48, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6lex0"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(48, 48, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m27vs"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(96, 48, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dcdxn"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(144, 48, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pq7c1"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(0, 96, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_15o4g"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(48, 96, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jdvx"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(96, 96, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8ptr"]
-atlas = ExtResource("2_g3p1i")
-region = Rect2(144, 96, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bmcmq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vqfsr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4lubx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3m0pu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ngrld")
+"texture": SubResource("AtlasTexture_3moa8")
 }],
 "loop": true,
-"name": &"happy",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cjd1q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6lex0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m27vs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dcdxn")
-}],
-"loop": true,
-"name": &"neutral",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pq7c1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_15o4g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2jdvx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d8ptr")
-}],
-"loop": true,
-"name": &"sad",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -122,35 +35,32 @@ shape = SubResource("CircleShape2D_0fxl0")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bmcmq")
-animation = &"neutral"
-autoplay = "neutral"
-frame_progress = 0.92405
 
 [node name="Collectors" type="Node2D" parent="."]
 
 [node name="Collector1" parent="Collectors" instance=ExtResource("3_7qjwl")]
-position = Vector2(0, -18)
+position = Vector2(-2, -15)
 
 [node name="Collector2" parent="Collectors" instance=ExtResource("3_7qjwl")]
-position = Vector2(-12, -13)
+position = Vector2(-14, -11)
 
 [node name="Collector3" parent="Collectors" instance=ExtResource("3_7qjwl")]
-position = Vector2(-17, -1)
+position = Vector2(-16, 1)
 
 [node name="Collector4" parent="Collectors" instance=ExtResource("3_7qjwl")]
 position = Vector2(-12, 11)
 
 [node name="Collector5" parent="Collectors" instance=ExtResource("3_7qjwl")]
-position = Vector2(0, 16)
+position = Vector2(-1, 14)
 
 [node name="Collector6" parent="Collectors" instance=ExtResource("3_7qjwl")]
-position = Vector2(12, 11)
+position = Vector2(11, 10)
 
 [node name="Collector7" parent="Collectors" instance=ExtResource("3_7qjwl")]
-position = Vector2(17, -1)
+position = Vector2(15, 0)
 
 [node name="Collector8" parent="Collectors" instance=ExtResource("3_7qjwl")]
-position = Vector2(12, -12)
+position = Vector2(10, -11)
 
 [node name="EmotionDetector" type="Area2D" parent="."]
 collision_layer = 0

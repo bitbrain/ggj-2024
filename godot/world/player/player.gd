@@ -13,42 +13,25 @@ extends CharacterBody2D
 
 var input_vector = Vector2.ZERO
 var emotions:Array[int]= []
-			
-var happiness := 0:
-	set(h):
-		happiness = h
-		if player_sprite != null:
-			if happiness > 3:
-				player_sprite.animation = "happy"
-			elif happiness < 0:
-				player_sprite.animation = "sad"
-			else:
-				player_sprite.animation = "neutral"
 
 func _ready() -> void:
-	self.happiness = 0
 	emotion_detector.body_entered.connect(_on_emotion_collected)
 
 
 func _on_emotion_collected(emotion:Emotion) -> void:
-	emotions.append(emotion.emotion_type)
-
-	# TODO: animate absorbtion process
-	emotion.queue_free()
-	
-	if emotions.size() == collectors.size():
-		emotions.clear()
-		for index in range(0, collectors.size()):
-			var collector = collectors[index] as Collector
-			collector.clear()
-		# TODO: figure out way to drive
-		# emotions.
-		happiness += 1
-	else:
+	if emotions.size() < collectors.size():
+		emotions.append(emotion.emotion_type)
+		emotion.queue_free()
 		for index in range(0, emotions.size()):
 			var collector = collectors[index] as Collector
 			collector.emotion = emotions[index]
 
+
+func deliver() -> void:
+	emotions.clear()
+	for index in range(0, collectors.size()):
+		var collector = collectors[index] as Collector
+		collector.clear()
 
 func move(input_vector:Vector2) -> void:
 	self.input_vector = input_vector.normalized()
