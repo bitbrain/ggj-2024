@@ -10,7 +10,7 @@ enum EmotionType {
 	SADNESS = -2
 }
 
-@export var movement_speed := 500.0
+@export var movement_speed := 50.0
 @export var emotion_type:EmotionType = EmotionType.HAPPINESS:
 	set(et):
 		emotion_type = et
@@ -26,24 +26,31 @@ enum EmotionType {
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var emotion_sprite: AnimatedSprite2D = $EmotionSprite
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
+@onready var navigation_update_timer: Timer = $NavigationUpdateTimer
 
+
+
+var player:Node2D
 
 func _ready() -> void:
+	
+	player = get_tree().get_first_node_in_group("Player") as Node2D
+	
+	navigation_update_timer.timeout.connect(_update_navigation)
+	
 	# enforce setget
 	self.emotion_type = emotion_type
 	navigation_agent_2d.path_desired_distance = 8.0
 	navigation_agent_2d.target_desired_distance = 8.0
 	navigation_agent_2d.debug_enabled = true
+	
+	
+func _update_navigation() -> void:
+	set_target_position(player.global_position)
 
 
 func set_target_position(target_position:Vector2) -> void:
 	navigation_agent_2d.target_position = target_position
-
-
-func _unhandled_input(event):
-	if not event.is_action_pressed("click"):
-		return
-	set_target_position(get_global_mouse_position())
 
 
 func _physics_process(delta: float) -> void:

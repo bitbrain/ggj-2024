@@ -29,7 +29,7 @@ radius = 47.2652
 [sub_resource type="CircleShape2D" id="CircleShape2D_ytl16"]
 radius = 30.0167
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 3
 script = ExtResource("1_qotba")
 

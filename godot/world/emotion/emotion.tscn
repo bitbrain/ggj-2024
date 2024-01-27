@@ -56,3 +56,7 @@ texture_scale = 0.5
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
+
+[node name="NavigationUpdateTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
