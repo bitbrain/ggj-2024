@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdj7cmfhvtj32"]
+[gd_scene load_steps=9 format=3 uid="uid://bdj7cmfhvtj32"]
 
 [ext_resource type="Script" path="res://world/emotion/emotion.gd" id="1_mwv1y"]
 [ext_resource type="Texture2D" uid="uid://dfvul4d81aino" path="res://world/emotion/emotion.png" id="2_cksn4"]
 [ext_resource type="PackedScene" uid="uid://b2k4pl8njae8l" path="res://lighting/animated_light.tscn" id="3_3sx3e"]
+[ext_resource type="AudioStream" uid="uid://b2jjn8rpxbwkb" path="res://sound/emotion.ogg" id="4_1ksyi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jqlhy"]
 radius = 5.0
@@ -61,3 +62,11 @@ target_desired_distance = 8.0
 [node name="NavigationUpdateTimer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1ksyi")
+volume_db = -10.0
+autoplay = true
+max_distance = 600.0
+attenuation = 3.605
+bus = &"Sound"
