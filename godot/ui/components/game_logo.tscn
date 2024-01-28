@@ -1,23 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4blrdjthcxnn"]
+[gd_scene load_steps=16 format=3 uid="uid://b4blrdjthcxnn"]
 
-[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="1_scjn5"]
+[ext_resource type="Texture2D" uid="uid://ckbfw1t7lhvkf" path="res://ui/components/logo/logo.png" id="1_cjqnn"]
 
-[node name="GameLogo" type="CenterContainer"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b13k3"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(0, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08gev"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(450, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye4yl"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(900, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7axgj"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(1350, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50e53"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(1800, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pehab"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(2250, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnmcf"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(2700, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybq4g"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(3150, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efui7"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(3600, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsond"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(4050, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ns0m"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(4500, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_628ox"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(4950, 0, 450, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cfvw"]
+atlas = ExtResource("1_cjqnn")
+region = Rect2(5400, 0, 450, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4pei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b13k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08gev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye4yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7axgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50e53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pehab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnmcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybq4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efui7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsond")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ns0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_628ox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cfvw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GameLogo" type="Control"]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 3
+anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 128.0
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 148.0
-offset_bottom = 148.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 138.0
-offset_bottom = 138.0
-texture = ExtResource("1_scjn5")
-stretch_mode = 2
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a4pei")
+autoplay = "default"
+centered = false

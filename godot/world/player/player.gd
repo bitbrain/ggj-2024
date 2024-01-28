@@ -18,6 +18,7 @@ const WorldCursor = preload("res://world/cursor/world_cursor.tscn")
 @onready var receptor_detector: Area2D = $ReceptorDetector
 @onready var collectors: Array[Node] = $Collectors.get_children()
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
+@onready var hit_sound: AudioStreamPlayer2D = $HitSound
 
 
 var input_vector = Vector2.ZERO
@@ -29,10 +30,10 @@ func _ready() -> void:
 	
 	navigation_agent_2d.path_desired_distance = 8.0
 	navigation_agent_2d.target_desired_distance = 8.0
-	navigation_agent_2d.debug_enabled = false
+	navigation_agent_2d.debug_enabled = true
 	
 	
-func _unhandled_input(event):
+func _input(event):
 	if not event.is_action_pressed("click"):
 		return
 	set_target_position(get_global_mouse_position())
@@ -62,6 +63,7 @@ func _on_emotion_collected(emotion:Emotion) -> void:
 			emotions.pop_front()
 			collector.queue_free()
 			emotion.queue_free()
+			hit_sound.play()
 			if collectors.is_empty():
 				dead.emit()
 	elif emotions.size() < collectors.size():

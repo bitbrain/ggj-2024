@@ -111,7 +111,7 @@ visible_ratio = 0.0
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("1_y6ebv")]
 unique_name_in_owner = true
-visible = false
+color = Color(0.172549, 0.0862745, 0.133333, 1)
 
 [node name="PauseOverlay" parent="UI" instance=ExtResource("3_8o178")]
 unique_name_in_owner = true

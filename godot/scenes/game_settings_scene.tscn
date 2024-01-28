@@ -37,7 +37,7 @@ text = "return_to_main"
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("1_w6tmj")]
 unique_name_in_owner = true
-visible = false
+color = Color(0.172549, 0.0862745, 0.133333, 1)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 autoplay = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://8hm6ewgugop6"]
+[gd_scene load_steps=11 format=3 uid="uid://8hm6ewgugop6"]
 
 [ext_resource type="Script" path="res://world/player/player.gd" id="1_qotba"]
 [ext_resource type="Texture2D" uid="uid://fbw5qfdyiogs" path="res://world/player/player.png" id="2_g3p1i"]
 [ext_resource type="PackedScene" uid="uid://8hiugi0xab50" path="res://world/player/collector/collector.tscn" id="3_7qjwl"]
 [ext_resource type="PackedScene" uid="uid://b2k4pl8njae8l" path="res://lighting/animated_light.tscn" id="4_uubsh"]
+[ext_resource type="AudioStream" uid="uid://vw6106tb82dg" path="res://sound/hitHurt.ogg" id="5_4etyu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0fxl0"]
 radius = 25.0
@@ -85,3 +86,8 @@ energy = 0.5
 animation_strength = 3
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4etyu")
+volume_db = -10.0
+bus = &"Sound"

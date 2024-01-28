@@ -13,7 +13,6 @@ var next_scene = game_scene
 var new_game = true
 
 func _ready() -> void:
-	overlay.visible = true
 	new_game_button.disabled = game_scene == null
 	settings_button.disabled = settings_scene == null
 	continue_button.visible = SaveGame.has_save() and SaveGame.ENABLED

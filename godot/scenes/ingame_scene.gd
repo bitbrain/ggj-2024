@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const WIN_HAPPINESS = 3
+const WIN_HAPPINESS = 30
 
 const GameOverScene = preload("res://scenes/game_over_scene.tscn")
 const MenuScene = preload("res://scenes/main_menu_scene.tscn")
