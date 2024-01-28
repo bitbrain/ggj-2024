@@ -10,8 +10,11 @@ class_name Collector extends Node2D
 				charge.animation = "happiness"
 			if emotion == Emotion.EmotionType.SADNESS:
 				charge.animation = "sadness"
+			audio_player.play()
 
 @onready var charge: AnimatedSprite2D = $Charge
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 
 
 func clear() -> void:

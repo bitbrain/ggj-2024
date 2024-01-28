@@ -1,7 +1,8 @@
 # win/lose condition:
 
 - when happiness score above X: win
-- when happiness score below Y: lose
+- when player lost all containers -> lose
+- blue ball hitting player: destroying 1 happiness collected + destroy container
 - add sound + visual indicators for current happiness score
 
 # nice to have gameplay
