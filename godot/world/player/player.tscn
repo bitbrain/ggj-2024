@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://vw6106tb82dg" path="res://sound/hitHurt.ogg" id="5_4etyu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0fxl0"]
-radius = 25.0
+radius = 26.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3moa8"]
 atlas = ExtResource("2_g3p1i")
