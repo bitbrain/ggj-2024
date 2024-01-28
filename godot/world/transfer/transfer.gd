@@ -1,8 +1,8 @@
 extends Node2D
 
 
-@export var MAX_SPEED := 10
-@export var MIN_COLLECT_DISTANCE := 4
+@export var MAX_SPEED := 5
+@export var MIN_COLLECT_DISTANCE := 6
 
 
 var target_receptor:Receptor

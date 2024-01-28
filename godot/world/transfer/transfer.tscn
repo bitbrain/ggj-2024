@@ -14,7 +14,6 @@ region = Rect2(0, 0, 11, 11)
 script = ExtResource("1_jueqj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
 material = SubResource("CanvasItemMaterial_covgo")
 position = Vector2(-6, -5)
 texture = SubResource("AtlasTexture_jaqf5")
