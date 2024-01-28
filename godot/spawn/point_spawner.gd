@@ -41,6 +41,7 @@ func spawn() -> void:
 	for child in get_children():
 		if child is Emotion:
 			emotion_count += 1
+	start_spawning()
 	#if emotion_count == spawn_amount:
 		#timer.stop()
 	

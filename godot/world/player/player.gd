@@ -69,8 +69,7 @@ func _on_emotion_collected(emotion:Emotion) -> void:
 			collector.queue_free()
 			emotion.queue_free()
 			hit_sound.play()
-			if collectors.is_empty():
-				dead.emit()
+			_queue_death_check.call_deferred()
 	elif emotions.size() < collectors.size():
 		emotions.append(emotion.emotion_type)
 		emotion.queue_free()
@@ -96,3 +95,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	move_and_slide()
 
+
+func _queue_death_check() -> void:
+	if collectors.is_empty():
+		dead.emit()

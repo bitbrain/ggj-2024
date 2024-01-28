@@ -122,12 +122,9 @@ color = Color(0.717647, 0.717647, 0.709804, 1)
 offset_left = 186.0
 offset_top = 167.0
 offset_right = 599.0
-offset_bottom = 261.0
+offset_bottom = 348.0
 theme_override_colors/default_color = Color(0.133333, 0.133333, 0.133333, 1)
 theme_override_fonts/normal_font = ExtResource("8_hjedw")
-text = "\"Laughter is the sun that drives winter from the human face.\"
-
-- Victor Hugo"
 scroll_active = false
 visible_characters = 0
 visible_characters_behavior = 1

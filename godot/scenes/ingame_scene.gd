@@ -1,7 +1,16 @@
 extends Node2D
 
 
-const WIN_HAPPINESS = 5
+const LAUGH_QUOTES = [
+	'"Laughter is the sun that drives winter from the human face."\n\n- Victor Hugo',
+	'"You may not control all the events that happen to you, but you can decide not to be reduced by them."\n\n- Maya Angelou',
+	'"Joy does not simply happen to us. We have to choose joy and keep choosing it every day."\n\n- Henri Nouwen',
+	'"Find out where joy resides, and give it a voice far beyond singing. For to miss the joy is to miss all."\n\n- Robert Louis Stevenson',
+	'"The most courageous act is still to think for yourself. Aloud."\n\n- Coco Chanel'
+]
+
+
+const WIN_HAPPINESS = 20
 
 const GameOverScene = preload("res://scenes/game_over_scene.tscn")
 const MenuScene = preload("res://scenes/main_menu_scene.tscn")
@@ -66,6 +75,7 @@ func _on_emotions_received() -> void:
 		
 func _on_win() -> void:
 	var quote_animation = create_tween()
+	laugh_quote.text = LAUGH_QUOTES.pick_random()
 	quote_animation.tween_property(laugh_quote, "visible_ratio", 1, 6.0)\
 	.finished.connect(_laugh_quote_shown)
 	

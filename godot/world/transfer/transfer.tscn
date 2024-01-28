@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4iptlogt4g0w"]
+[gd_scene load_steps=4 format=3 uid="uid://c4iptlogt4g0w"]
 
 [ext_resource type="Texture2D" uid="uid://cxf1oyuscpe4g" path="res://world/player/collector/charge.png" id="1_2yl26"]
 [ext_resource type="Script" path="res://world/transfer/transfer.gd" id="1_jueqj"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_covgo"]
-light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jaqf5"]
 atlas = ExtResource("1_2yl26")
@@ -14,7 +11,6 @@ region = Rect2(0, 0, 11, 11)
 script = ExtResource("1_jueqj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_covgo")
 position = Vector2(-6, -5)
 texture = SubResource("AtlasTexture_jaqf5")
 centered = false

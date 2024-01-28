@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdj7cmfhvtj32"]
+[gd_scene load_steps=9 format=3 uid="uid://bdj7cmfhvtj32"]
 
 [ext_resource type="Script" path="res://world/emotion/emotion.gd" id="1_mwv1y"]
 [ext_resource type="Texture2D" uid="uid://dfvul4d81aino" path="res://world/emotion/emotion.png" id="2_cksn4"]
@@ -7,13 +7,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jqlhy"]
 radius = 5.0
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3d53e"]
-light_mode = 1
-particles_animation = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0jgdd"]
 atlas = ExtResource("2_cksn4")
@@ -52,7 +45,6 @@ emotion_type = 0
 shape = SubResource("CircleShape2D_jqlhy")
 
 [node name="EmotionSprite" type="AnimatedSprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_3d53e")
 sprite_frames = SubResource("SpriteFrames_6qkj0")
 animation = &"happiness"
 autoplay = "happiness"
