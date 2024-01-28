@@ -39,8 +39,32 @@ unique_name_in_owner = true
 [node name="Receptor" parent="Entities/Receptors" instance=ExtResource("4_x8auc")]
 position = Vector2(-510, 96)
 
+[node name="Position1" parent="Entities/Receptors/Receptor/ReceivePositions" index="0"]
+position = Vector2(-84, 6)
+
+[node name="Position2" parent="Entities/Receptors/Receptor/ReceivePositions" index="1"]
+position = Vector2(-43, -21)
+
+[node name="Position3" parent="Entities/Receptors/Receptor/ReceivePositions" index="2"]
+position = Vector2(3, -43)
+
+[node name="Position4" parent="Entities/Receptors/Receptor/ReceivePositions" index="3"]
+position = Vector2(-51, -36)
+
 [node name="Receptor2" parent="Entities/Receptors" instance=ExtResource("4_x8auc")]
 position = Vector2(401, -577)
+
+[node name="Position1" parent="Entities/Receptors/Receptor2/ReceivePositions" index="0"]
+position = Vector2(43, -44)
+
+[node name="Position2" parent="Entities/Receptors/Receptor2/ReceivePositions" index="1"]
+position = Vector2(69, -21)
+
+[node name="Position3" parent="Entities/Receptors/Receptor2/ReceivePositions" index="2"]
+position = Vector2(13, -65)
+
+[node name="Position4" parent="Entities/Receptors/Receptor2/ReceivePositions" index="3"]
+position = Vector2(53, -62)
 
 [node name="Emotions" parent="Entities" instance=ExtResource("4_21hy4")]
 unique_name_in_owner = true
@@ -127,3 +151,6 @@ bus = &"Music"
 [node name="WinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_stnmg")
 volume_db = -10.0
+
+[editable path="Entities/Receptors/Receptor"]
+[editable path="Entities/Receptors/Receptor2"]

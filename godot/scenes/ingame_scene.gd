@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const WIN_HAPPINESS = 30
+const WIN_HAPPINESS = 5
 
 const GameOverScene = preload("res://scenes/game_over_scene.tscn")
 const MenuScene = preload("res://scenes/main_menu_scene.tscn")
@@ -50,9 +50,8 @@ func _save_game() -> void:
 	SaveGame.save_game(get_tree())
 	
 	
-func _on_emotions_received(emotions:Array[int]) -> void:
-	for emotion in emotions:
-		emotional_state += emotion
+func _on_emotions_received() -> void:
+	emotional_state += 1
 	spawner.start_spawning()
 	if emotional_state >= WIN_HAPPINESS:
 		get_tree().paused = true

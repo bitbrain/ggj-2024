@@ -19,3 +19,13 @@ stream = ExtResource("2_ygoul")
 volume_db = -15.0
 attenuation = 3.605
 bus = &"Sound"
+
+[node name="ReceivePositions" type="Node2D" parent="."]
+
+[node name="Position1" type="Marker2D" parent="ReceivePositions"]
+
+[node name="Position2" type="Marker2D" parent="ReceivePositions"]
+
+[node name="Position3" type="Marker2D" parent="ReceivePositions"]
+
+[node name="Position4" type="Marker2D" parent="ReceivePositions"]

@@ -5,6 +5,7 @@ signal dead
 
 
 const WorldCursor = preload("res://world/cursor/world_cursor.tscn")
+const Transfer = preload("res://world/transfer/transfer.tscn")
 
 
 @export var ACCELERATION = 1550
@@ -49,11 +50,15 @@ func set_target_position(target_position:Vector2) -> void:
 func _on_receptor_touched(receptor:Receptor) -> void:
 	if emotions.is_empty():
 		return
-	receptor.deliver(emotions.duplicate())
-	emotions.clear()
 	for index in range(0, collectors.size()):
 		var collector = collectors[index] as Collector
-		collector.clear()
+		if collector.is_charged():
+			var transfer_instance = Transfer.instantiate()
+			transfer_instance.global_position = collector.global_position
+			transfer_instance.target_receptor = receptor
+			receptor.get_parent().add_child(transfer_instance)
+			collector.clear()
+	emotions.clear()
 
 
 func _on_emotion_collected(emotion:Emotion) -> void:
