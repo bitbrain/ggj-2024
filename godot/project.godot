@@ -15,6 +15,7 @@ config/description="A game about laughing (and the lack thereof)"
 config/version="1.0.0"
 run/main_scene="res://scenes/boot/godot/godot_bootsplash_scene.tscn"
 config/features=PackedStringArray("4.2")
+boot_splash/bg_color=Color(0.172549, 0.0862745, 0.133333, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -126,4 +127,4 @@ locale/translations=PackedStringArray("res://i18n/translation.de.translation", "
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
+environment/defaults/default_clear_color=Color(0.172549, 0.0862745, 0.133333, 1)

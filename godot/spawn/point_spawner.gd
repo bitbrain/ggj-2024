@@ -2,7 +2,7 @@ class_name PointSpawner extends Node2D
 
 
 const EmotionScene = preload("res://world/emotion/emotion.tscn")
-const Emotions = [Emotion.EmotionType.HAPPINESS, Emotion.EmotionType.HAPPINESS, Emotion.EmotionType.SADNESS]
+const Emotions = [Emotion.EmotionType.HAPPINESS, Emotion.EmotionType.HAPPINESS, Emotion.EmotionType.HAPPINESS, Emotion.EmotionType.SADNESS]
 
 
 ## The number of initial entities to spawn and also the maximum number

@@ -10,7 +10,7 @@ enum EmotionType {
 	SADNESS = -2
 }
 
-@export var movement_speed := 120.0
+@export var movement_speed := 250.0
 @export var emotion_type:EmotionType = EmotionType.HAPPINESS:
 	set(et):
 		emotion_type = et

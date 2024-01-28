@@ -1,4 +1,7 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
+
+
+signal dead
 
 
 const WorldCursor = preload("res://world/cursor/world_cursor.tscn")
@@ -53,7 +56,15 @@ func _on_receptor_touched(receptor:Receptor) -> void:
 
 
 func _on_emotion_collected(emotion:Emotion) -> void:
-	if emotions.size() < collectors.size():
+	if emotion.emotion_type == Emotion.EmotionType.SADNESS:
+		if not collectors.is_empty():
+			var collector = collectors.pop_front()
+			emotions.pop_front()
+			collector.queue_free()
+			emotion.queue_free()
+			if collectors.is_empty():
+				dead.emit()
+	elif emotions.size() < collectors.size():
 		emotions.append(emotion.emotion_type)
 		emotion.queue_free()
 		for index in range(0, emotions.size()):

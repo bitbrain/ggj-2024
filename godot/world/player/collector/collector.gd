@@ -6,10 +6,6 @@ class_name Collector extends Node2D
 		emotion = e
 		if charge != null:
 			charge.visible = true
-			if emotion == Emotion.EmotionType.HAPPINESS:
-				charge.animation = "happiness"
-			if emotion == Emotion.EmotionType.SADNESS:
-				charge.animation = "sadness"
 			audio_player.play()
 
 @onready var charge: AnimatedSprite2D = $Charge

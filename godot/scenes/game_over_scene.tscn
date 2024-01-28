@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://0v0c2xwh64pe"]
+
+[ext_resource type="Texture2D" uid="uid://ddey7jjn0cs8b" path="res://scenes/gameover-animation.png" id="1_0hn35"]
+[ext_resource type="Script" path="res://scenes/game_over_scene.gd" id="1_8tvsx"]
+[ext_resource type="Texture2D" uid="uid://dwufyeewacyfe" path="res://lighting/canvas.png" id="1_hf5kw"]
+[ext_resource type="AudioStream" uid="uid://bwwgl4y0d6eib" path="res://sound/gameover.ogg" id="2_rvtox"]
+[ext_resource type="PackedScene" uid="uid://b2k4pl8njae8l" path="res://lighting/animated_light.tscn" id="4_68jco"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej2rk"]
+atlas = ExtResource("1_0hn35")
+region = Rect2(0, 0, 384, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnbwq"]
+atlas = ExtResource("1_0hn35")
+region = Rect2(384, 0, 384, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgya6"]
+atlas = ExtResource("1_0hn35")
+region = Rect2(768, 0, 384, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4rkt"]
+atlas = ExtResource("1_0hn35")
+region = Rect2(1152, 0, 384, 216)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8u2h8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej2rk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnbwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgya6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4rkt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="GameOverScene" type="Node2D"]
+script = ExtResource("1_8tvsx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999969, 1.00001)
+scale = Vector2(6.25391, 3.48047)
+texture = ExtResource("1_hf5kw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8u2h8")
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rvtox")
+volume_db = -10.0
+autoplay = true
+bus = &"Sound"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.647059, 0.647059, 0.635294, 1)
+
+[node name="AnimatedLight" parent="." instance=ExtResource("4_68jco")]
+position = Vector2(-1, -1)
+energy = 0.8
+texture_scale = 1.5
+animation_strength = 6
